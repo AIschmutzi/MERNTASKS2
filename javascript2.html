@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>js task2</title>
+    <style>
+      header {
+        padding: 20px;
+      }
+      body {
+        font-size: 20px;
+        padding: 20px;
+      }
+      input[type="text"] {
+        width: 100px;
+        padding: 5px;
+        font-size: 20px;
+        border: 1px solid #ccc;
+      }
+
+      input[type="button"] {
+        background-color: #007bff;
+        color: #ede6e6;
+        border-radius: 10px;
+        border: none;
+        margin-left: 10px;
+        padding: 10px 20px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+      #calc {
+        padding-top: 3rem;
+        padding-left: 3rem;
+      }
+      #fin {
+        text-align: center;
+      }
+      #res {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h2>Reverse the string</h2>
+    </header>
+    <form id="calc">
+      <div>
+        <label for="Inpuut">Input String:</label>
+        <input type="text" id="Inpuut" name="Inpuut" placeholder="text" required />
+        <input type="button" value="sort" onclick="sort()" />
+      </div>
+    </form>
+    <p id="res"></p>
+    <script>
+      function sort() {
+        var str = document.getElementById("Inpuut").value;
+        const sortedstr = str.split("").sort().join("");
+        document.getElementById("res").innerHTML =
+          "Final text is:" + sortedstr;
+      }
+    </script>
+  </body>
+</html>

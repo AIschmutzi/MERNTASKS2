@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>js task 5</title>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td><label for="nme">Name:</label></td>
+        <td><input type="text" id="Name" /></td>
+        <td id="nm"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><label for="eml">Email:</label></td>
+        <td><input type="email" id="Email" /></td>
+        <td id="em"></td>
+      </tr>
+
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <td><label for="web">Website:</label></td>
+        <td><input type="text" id="Website" /></td>
+        <td id="wm"></td>
+      </tr>
+
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <td><label for="msg">Message:</label></td>
+        <td>
+          <textarea name="msg" id="Message" cols="20" rows="7"></textarea>
+        </td>
+        <td id="mm"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><button onclick="val()">Submit</button></td>
+        <td></td>
+      </tr>
+    </table>
+  </body>
+
+  <script>
+    function val() {
+      var a = document.getElementById("Name").value;
+      var b = document.getElementById("Email").value;
+      var c = document.getElementById("Website").value;
+      var d = document.getElementById("Message").value;
+
+      if (a == "" && b == "" && c == "" && d == "") {
+        document.getElementById("nm").innerHTML = "required";
+        document.getElementById("em").innerHTML = "required";
+        document.getElementById("wm").innerHTML = "required";
+        document.getElementById("mm").innerHTML = "required";
+
+        document.getElementById("Name").style.border = "2px solid red";
+        document.getElementById("Email").style.border = "2px solid red";
+        document.getElementById("Website").style.border = "2px solid red";
+        document.getElementById("Message").style.border = "2px solid red";
+
+        document.getElementById("nm").style.color = "red";
+        document.getElementById("em").style.color = "red";
+        document.getElementById("mm").style.color = "red";
+        document.getElementById("wm").style.color = "red";
+      }
+    }
+  </script>
+</html>

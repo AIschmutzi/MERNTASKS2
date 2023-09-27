@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>task 6 js</title>
+    <style>
+      body {
+        background-color: #e7dede;
+      }
+      .container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #ecebeb;
+        box-shadow: 0 0 5px rgba(12, 11, 11, 0.1);
+      }
+      .header {
+        text-align: center;
+        font-size: 30px;
+        margin-bottom: 20px;
+      }
+      .input-field {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+      .input-field img {
+        width: 20px;
+        margin-right: 10px;
+      }
+      .input-field input[type="text"],
+      .input-field input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #fcf9f9;
+        border-radius: 5px;
+        font-size: 14px;
+      }
+      .login-button {
+        width: 100%;
+        padding: 10px;
+        background-color: #1f2389;
+        color: #bcb7b7;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .remember-forgot {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+      }
+      .error-message {
+        color: rgb(86, 9, 9);
+        font-size: 14px;
+        margin-top: 10px;
+      }
+      .sign-up {
+        text-align: center;
+        margin-top: 20px;
+      }
+      .sign-up a {
+        color: #288f9b;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">Instagram</div>
+      <form id="login-form">
+        <div class="input-field">
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/1077/1077114.png"
+            alt="Username"
+          />
+          <input type="text" id="username" placeholder="Username" />
+        </div>
+        <div class="input-field">
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/5280/5280006.png"
+            alt="Password"
+          />
+          <input type="password" id="password" placeholder="Password" />
+        </div>
+        <div class="error-message" id="username-error"></div>
+        <div class="error-message" id="password-error"></div>
+        <button class="login-button" onclick="validateForm(event)">
+          Log in
+        </button>
+        <div class="remember-forgot">
+          <label><input type="checkbox" /> Remember me</label>
+          <a href="#">Forgot password?</a>
+        </div>
+      </form>
+      <div class="sign-up">
+        Don't have account? <a href="#">Sign up here</a>
+      </div>
+    </div>
+    <script>
+      function validateForm(event) {
+        event.preventDefault();
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        document.getElementById("username-error").innerHTML = "";
+        document.getElementById("password-error").innerHTML = "";
+        if (username === "") {
+          document.getElementById("username-error").innerHTML =
+            "Please enter a username.";
+        }
+        if (password === "") {
+          document.getElementById("password-error").innerHTML =
+            "Please enter a password.";
+        }
+      }
+    </script>
+  </body>
+</html>
